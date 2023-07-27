@@ -32,7 +32,7 @@
         "media": {
           "url": "https://django-tpam-paulf.s3.eu-west-2.amazonaws.com/media/Imberhome_Viaduct_Construction.png",
           "caption": "Imberhorne Viaduct under construction",
-          "credit": "The Life of Joseph Firbank, Google Books"
+          "credit": "The Life and Works of Joseph Firbank, Google Books"
         },
         "start_date": {
           "year": "1878"
@@ -47,7 +47,7 @@
       },
       {
         "media": {
-          "url": "https://en.wikipedia.org/wiki/London,_Brighton_and_South_Coast_Railway#/media/File:Lbscr1922.jpg",
+          "url": "./map.gif",
           "caption": "",
           "credit": ""
         },
