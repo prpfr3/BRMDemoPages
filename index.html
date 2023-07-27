@@ -34,13 +34,14 @@
             <p></p>
         </div>
     </div>
-    <div id='timeline-embed' style="width: 100%; height: 530px"></div> 
+    <div id='timeline-embed' style="width: 100%; height: 530px"></div>
+    <a href="./about.html">Read about how this Timeline was created</a>
+
     <script>
         $(document).ready(function() {
             var embed = document.getElementById('timeline-embed');
             embed.style.height = getComputedStyle(document.body).height;
 
-            // var items ="{% static 'bluebell_timeline.json' %}"
             var items = 'bluebell_timeline.json';
 
             window.timeline = new TL.Timeline('timeline-embed', items, {
