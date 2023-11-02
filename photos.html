@@ -14,10 +14,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
- 	<meta name="description" content="Magazines held in the archive have been catalogued and can here be searched">  
+ 	<meta name="description" content=" A large archive of railway photographs is available to search and browse online. These include locomotives, stations, signals, signal boxes and infrastructure. All areas of the UK and Ireland are included. Copies, in a variety of sizes and jpg format, may be purchased. ">  
  	<meta name="keywords" content="">
 	<!-- <title>Heritage Steam | Railway  | Museum | Family Days Out | </title> -->
-	<title>  Railway | Catalogue | Search Browse |  </title>
+	<title>  Railway | Photographs | Search Browse | For Sale |  </title>
 
 	<style>
 		.bar3Bg	{background-color: #eef0f4;}
@@ -26,7 +26,7 @@
 	</style>
 
 	<!-- Current javascript to manage search parameters - switched off for now as search parameters have been changed -->
-	<script type="text/javascript" src="<?php echo URLROOT; ?>/js/photos_initialise.js"></script>
+	<script type="text/javascript" src="photos_initialise.js"></script>
 </head>
 
 <body>
@@ -161,14 +161,14 @@
 
 		<div class="row">
 			<div class="col-sm heroFontColour botpad3 toppad3 text-center heroBgr baseFontSize">
-				<h1>Bluebell Archives - Magazine Catalogue</h1>
-				<p>Browse and Search the Catalogue of Magazines held in the Archive.<p>
+				<h1>Archive of Photographs</h1>
+				<p>Browse, search and buy digital copies from an archive of 20,000+ photos of locomotives, rolling Stock and infrastructure taken across the UK and Ireland.<p>
 			</div>
 		</div>
 
 		<div class="album py-4 bg-light">
   		<div class="container">
-			<h3 class="black">The Magazines</h3>
+			<h3 class="black">The Collections</h3>
 				<div class="row" id="image-container">
 					<!-- JavaScript will populate the images here -->
 				</div>
@@ -177,46 +177,28 @@
 
 		<style>
 			.custom-card {
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					border: 1px solid #ccc;
-					height: 100%; /* Set the desired height (e.g., 100% for responsiveness) */
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border: 1px solid #ccc; /* Add a border for each image box */
+				height: 300px; /* Set the desired height for the image boxes */
 			}
 
 			.custom-img {
-					max-width: 100%; /* Set to 100% or specific pixel value */
-					max-height: 100%; /* Set to 100% or specific pixel value */
-					object-fit: contain; /* Adjust to your preference (cover, contain, etc.) */
+				max-width: 100%; /* Maintain aspect ratio */
+				max-height: 100%; /* Make the images twice as big */
+				object-fit: cover; /* Ensure images fill the box */
 			}
 		</style>
 
-		<!-- <div id="modalContainer"></div>
-		<script type="text/javascript" src="<?php echo URLROOT; ?>/js/photos_modals.js"></script> -->
+		<div id="modalContainer"></div>
+		<script type="text/javascript" src="photos_modals.js"></script>
 
 		<script>
 			// Function to populate the images and card text
 			function populateImages() {
-				const magazinesData = [
-						{
-							image_url: '1921001.jpg',
-							title: 'South Western Railway Magazine 1921',
-						},
-						{
-							image_url: '1922001.jpg',
-							title: 'South Western Railway Magazine 1922',
-						},
-						{
-							image_url: 'Southern Way Vol 1_sm.jpg',
-							title: 'Southern Way Magazine',
-						},
-						{
-							image_url: 'bylines-nov-23.jpg',
-							title: 'Railway Bylines Magazine',
-						},
-					]
 				const imageContainer = document.getElementById('image-container');
-				for (const magazine of magazinesData) {
+				for (const collection of collectionsData) {
 					const cardCol = document.createElement('div');
 					cardCol.className = 'col-md-3'; // Set the desired width for medium screens
 
@@ -225,15 +207,14 @@
 
 					const img = document.createElement('img');
 					img.className = 'custom-img'; // Add the custom-img class
-					// img.src = "<?php echo URLROOT; ?>/data/" + magazine.image_url;
-					img.src = magazine.image_url;
+					img.src = collection.image_url;
 
 					const cardBody = document.createElement('div');
 					cardBody.className = 'card-body';
 
 					const cardText = document.createElement('p');
 					cardText.className = 'card-text';
-					cardText.innerHTML = magazine.title;
+					cardText.innerHTML = collection.summary;
 
 					cardBody.appendChild(cardText);
 					card.appendChild(img);
@@ -249,50 +230,127 @@
 		
 		<div class="row"><!--Search Area -->
 			<div class="col-sm-8 pt-3">
-				<h3 class="black">Enter one or more fields to search the magazine catalogue</h3>
-				<h4 class="black">Search Results will show only references to magazines which meet ALL the criteria entered</h4>
+				<h3 class="black">Enter one or more fields to search the archive of collections</h3>
+				<h4 class="black">Search Results will show only photos which meet ALL the criteria entered</h4>
 				<form action="https://www.bluebell-railway-museum.co.uk/buildSearchTerm.php" method="post" id="photoSearch" name="photoSearch"  autocomplete="off" Xonsubmit="return checkSearchCriteriaSet(this)"> <!--set action to current dev or live version-->
 					<input type="hidden" name="searchType" id="searchType" value="targeted">
 
-					<div id="journalDiv">
-						<label for="journal">Magazine</label> 
-						<select id="journal"  name="journal">
+					<div class="imgRef" id="imgRefDiv" name="imgRefDiv">
+							<br>
+							<label for="imgRef">Image reference</label>
+							<input type="text" name="imgRef" id="imgRef" placeholder="6 digit number" maxlength="6">
+					</div>
+
+					<div id="photographerDiv">
+						<label for="photographer">Photographer</label> 
+						<select id="photographer"  name="photographer">
 							<option value="all">-Select from list-</option>
 							<option value="all">All</option>
-							<option value="Railway Bylines">Railway Bylines</option>
-							<option value="Southern Way">Southern Way</option>
-							<option value="South Western Railway Magazine">South Western Railway Magazine</option>
+							<option value="John J Smith">John J Smith</option>
+							<option value="Colin Hogg">Colin Hogg</option>
+							<option value="Alan Postlethwaite">Alan Postlethwaite</option>
+							<option value="Joe Kent">Joe Kent</option>
+							<option value="John Scrace">John Scrace</option>
+							<option value="David Esau">David Esau</option>
+							<option value="RC Riley">RC Riley</option>
+							<option value="Colin Saunders">Colin Saunders</option>
 						</select>
 					</div>
 
-					<div class="issues" id="issues" name="issues">	
+					<div class="loconumbers" id="loconumbers" name="loconumbers">	
 						<!-- <p>Search for range of loco numbers</p> -->
-						<label for="issueStartRange">Issue(s)</label>
-						<input type="text" name="issueStartRange" id="issueStartRange" placeholder="Single or Start of Range"> 
-						<input type="text" name="issueEndRange" id="issueEndRange" placeholder="End of Range">	
+						<label for="locoNumberStartRange">Loco Numbers</label>
+						<input type="text" name="loconumberStartRange" id="locoNumberStartRange" placeholder="Single or Start of Range"> 
+						<input type="text" name="loconumberEndRange" id="locoNumberEndRange" placeholder="End of Range">	
 					</div>
 
-					<div class="volumes" id="volumes" name="volumes">	
-						<!-- <p>Search for range of loco numbers</p> -->
-						<label for="volumeStartRange">Volume(s)</label>
-						<input type="text" name="volumeStartRange" id="volumeStartRange" placeholder="Single or Start of Range"> 
-						<input type="text" name="volumeEndRange" id="volumeEndRange" placeholder="End of Range">	
+					<div class="lococlass" id='lococlassDiv' name='lococlassDiv'>
+						<label for="locoClass">Loco Class</label>
+						<select id="locoClass"  name="lococlass">
+							<option value="">--Select from list --</option>
+							<option value="SECR H class">SECR H class</option>
+							<option value="SECR J class">SECR J class</option>
+							<option value="SECR K and SR K1 classes">SECR K and SR K1 classes</option>
+							<option value="SECR L class">SECR L class</option>
+							<option value="SECR N class">SECR N class</option>
+							<option value="SECR N1 class">SECR N1 class</option>
+							<option value="SECR O class">SECR O class</option>
+							<option value="SECR P class">SECR P class</option>
+							<option value="SECR R1 class">SECR R1 class</option>
+							<option value="SER A class">SER A class</option>
+							<option value="SER F class">SER F class</option>
+							<option value="SER O class">SER O class</option>
+							<option value="SER Q class">SER Q class</option>
+							<option value="SER R class">SER R class</option>
+							<option value="SR N15X class">SR N15X class</option>
+							<option value="SR Q1 class">SR Q1 class</option>
+							<option value="SR U class">SR U class</option>
+							<option value="SR U1 class">SR U1 class</option>
+							<option value="SR USA class">SR USA class</option>
+							<option value="SR West Country and Battle of Britain classes">SR West Country and Battle of Britain classes</option>
+							<option value="SR Z class">SR Z class</option>
+						</select>  
 					</div>
 
-					<div class="years" id="years" name="years">	
-						<!-- <p>Search for range of loco numbers</p> -->
-						<label for="yearStartRange">Year(s)</label>
-						<input type="text" name="yearStartRange" id="yearStartRange" placeholder="Single or Start of Range"> 
-						<input type="text" name="yearEndRange" id="yearEndRange" placeholder="End of Range">	
+					<div class="loconame" id='loconameDiv' name='loconameDiv'>
+						<label for="locoName">Loco Name</label>
+						<input type="text" name="nameLoco" id="locoName" placeholder="All or part of name" onkeyup="changeNameLoco()">     
 					</div>
 
-					<div class="title" id='titleDiv' name='titleDiv'>
-						<label for="title">Title</label>
-						<input type="text" name="title" id="title" placeholder="All or part of article title">     
+					<div class="location" id='locationDiv' name='locationDiv'>
+						<label for="location">Location</label>
+						<input type="text" name="location" id="location" placeholder="All or part of description" onkeyup="imageLocationChange()">   
 					</div>
 
+					<div class="category " id='categoryDiv' name='categoryDiv'>
+						<label for="category">Category</label> 
+						<select name="category" id="category">
+							<option value="">--Select from list --</option>
+							<option value="NW">New on 11 October</option>							 
+							<option value="NN">New on 6 September</option>									 
+							<option value="BB">Bluebell</option>									 
+							<option value="FC">Fenchurch</option>									 
+							<option value="CO">Coaches</option>									 
+							<option value="CS">Colonel Stephens</option>									 
+							<option value="CU">Cuckoo Line</option>									 
+							<option value="ED">Electric and Diesel</option>									 
+							<option value="ER">Eastern Region</option>									 
+							<option value="FO">Foreign - not Spain</option>									 
+							<option value="WG">Goods Wagons etc</option>									 
+							<option value="IN">Industrial Locomotives</option>									 
+							<option value="IR">Ireland</option>									 
+							<option value="IM">Isle of Man</option>									 
+							<option value="LT">London Underground</option>									 
+							<option value="MR">Midland Region</option>									 
+							<option value="LM">Military Depots - Bicester & Longmoor</option>	
+							<option value="NG">Narrow Gauge</option>									 
+							<option value="PL">Pullmans</option>									 
+							<option value="RT">Rail Tours</option>								 
+							<option value="RD">Road Transport</option>									 
+							<option value="SC">Scotland</option>
+							<option value="MP">Sheds - Works - Motive Power Depots</option>
+							<option value="SP">Shipping</option>
+							<option value="SG">Signal Boxes & Signals</option>	
+							<option value="FS">Spain</option>
+							<option value="ST">Stations</option>
+							<option value="WR">Western Region</option>	
+							<option value="ZB">Berkshire</option>
+							<option value="ZC">Cornwall</option>	
+							<option value="ZV">Devon</option>
+							<option value="ZD">Dorset</option>	
+							<option value="ZH">Hampshire</option>									 
+							<option value="IW">Isle of Wight</option>	
+							<option value="ZK">Kent</option>
+							<option value="LO">London - Greater</option>	
+							<option value="ZM">Somerset</option>
+							<option value="ZY">Surrey</option>	
+							<option value="ZS">Sussex - East</option>	
+							<option value="ZX">Sussex - West</option>	
+							<option value="ZW">Wiltshire</option>	
+						</select>
+					</div>
 					<div class="allFieldsSearch" id='allFieldsSearch' name='allFieldsSearch'>
-						<label for="searchTerm">Text Search of Title and Content</label>
+						<label for="searchTerm">All Fields Search</label>
 						<input type="text" name="searchTerm" id="searchTerm" placeholder="An alphanumeric string">   
 					</div>
 
@@ -301,13 +359,14 @@
 			</div>
 		</div><!--End of Search Area -->
 
+		<p>Images may be ordered for private or commercial use. Please see <a class="class2" href="https://www.bluebell-railway-museum.co.uk/terms.php" target="_blank">Terms</a>for conditions, prices and help. Note images for commercial use are only supplied as jpgs.</p>
+
 		<!-- TEMPORARY AREA FOR SEARCH RESULTS -->
-		<strong>SEARCH RESULTS</strong><br><br>
+		<strong>SEARCH RESULTS (TEMPORARY AREA - IN PROD THIS WOULD BE RENDERED AT https://www.bluebell-railway-museum.co.uk/searchResults.php)</strong><br><br>
 
 		<div id="json-data"></div>
 
-		<!-- <script type="text/javascript" src="<?php echo URLROOT; ?>/js/magazine_catalogue_search.js"></script> -->
-		<script type="text/javascript" src="magazine_catalogue_search.js"></script>
+		<script type="text/javascript" src="photos_search.js"></script>
 		<!-- STANDARD FOOTERS -->
 		<div class="row">
 			<div class="col-sm-12 paddingTop footer1Bgr footer1FontColour">

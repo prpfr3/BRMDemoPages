@@ -3,7 +3,8 @@ const jsonData = [
   {"archiveref": "000046", "date": "Oct 18th 1964", "location": "Passing Preston Parks Pullman Works", "creator": "John Scrace", "further_details": "Modified 05/1958. 35007 worked the Littlehampton - Preston - Park - Brighton - London Victoria legs of the tour", "train_working": "RCTS/LCGB 'Midhurst Belle' railtour", "loconumber": "35008", "lococlass": "MN", "category": "ZX"}
 ];
 
-// Define the mapping of category codes to descriptions
+const jsonFile = '../data/photoarchive_10000.json'; // Path to the JSON file
+
 // Define the mapping of category codes to descriptions
 const categoryMapping = {
     "NW": "New on 11 October",
