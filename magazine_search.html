@@ -160,28 +160,155 @@
 		-->
 		<!--!SEO-->
 
-		<div class="row  botpad3">
+		<div class="row">
 			<div class="col-sm heroFontColour botpad3 toppad3 text-center heroBgr baseFontSize">
-			
-				<h1><b>Sample Pages for the Museum Website and/or Interactive Display</b></h1>
-				<p>A selection of possible web pages for the website and/or museum interactive display.</p>
-				<p>Note that this is not the live Museum Website; The layout of the live website is used here to demonstrate how the sample pages would work with the Museum website theme / branding. For the interactive display, the headers and footers could be removed for better use of the space and visual effect.</p>
+				<h1>Bluebell Archives - Magazine Catalogue</h1>
+				<p>Browse and Search the Catalogue of Magazines held in the Archive.<p>
 			</div>
 		</div>
-		<!-- Display the following paragraph depending upon value of $covidMessage-->
 
-		<h1><a class="link-primary" href="timeline.html">Bluebell Railway Timeline</a></h1>
-		<p><b>For the Website and/or Interactive Display</b> Developed using the same standard web page software as the museum website (HTML,CSS,JS) + US North Western University's <a class="link-primary" href="https://timeline.knightlab.com/">Knightlab open source Timeline package.</a> Very easy to adapt the content. Look and feel can be adapted but within limits. Would work on an interactive screen:- Swipe left and right on the pages and/or manipulate the timeline in the footer. Content of this example requires further work and rationalisation. Very easy to apply to other content, for example, a timeline with a page for each of the LBSCR CMEs, a timeline for each of the Bluebell railway locomotives, a timeline for key museum exhibits in chronological order and so on. </p>
+		<div class="album py-4 bg-light">
+  		<div class="container">
+			<h3 class="black">The Magazines</h3>
+				<div class="row" id="image-container">
+					<!-- JavaScript will populate the images here -->
+				</div>
+  		</div>
+		</div>
 
-		<h1><a class="link-primary" href="storymap.html">Bluebell Railway Storymap</a></h1>
-		<p><b>For the Website and/or Interactive Display</b> Visitors can step along the Bluebell line to find out about the stations etc on the route. Similar to the timeline but uses the <a class="link-primary" href="https://storymap.knightlab.com/">Storymap package</a> rather than the Timeline package. Content shown is currently from Wikipedia. Basic content available to generate such storymaps for any route in the UK (e.g. could have storymaps for other LBSCR routes, named train routes such as the Atlantic Coast Express etc).</p>
+		<style>
+			.custom-card {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					border: 1px solid #ccc;
+					height: 100%; /* Set the desired height (e.g., 100% for responsiveness) */
+			}
 
-		<h1><a class="link-primary" href="photos_search.html">Photos Archive Search</a></h1>
-		<p><b>Primarily for the website</b> Demonstrates a slightly improved search interface for the existing photos search page. Could be adapted for the Interactive Display; would require onscreen or physical keyboard search term entry. Catalogue already available but the thumbnails might not have the resolution needed for the larger Interactive Display</p>
+			.custom-img {
+					max-width: 100%; /* Set to 100% or specific pixel value */
+					max-height: 100%; /* Set to 100% or specific pixel value */
+					object-fit: contain; /* Adjust to your preference (cover, contain, etc.) */
+			}
+		</style>
 
-		<h1><a class="link-primary" href="magazine_search.html">Magazine Archive Search</a></h1>
-		<p><b>Primarily for the website</b> Similar to the photo archive search. Show hows a search facility might be implemented for the magazine catalogue. Could be used to search for people references across the catalogue (e.g. for geneaology purposes).</p>
+		<!-- <div id="modalContainer"></div>
+		<script type="text/javascript" src="<?php echo URLROOT; ?>/js/photos_modals.js"></script> -->
 
+		<script>
+			// Function to populate the images and card text
+			function populateImages() {
+				const magazinesData = [
+						{
+							image_url: '1921001.jpg',
+							title: 'South Western Railway Magazine 1921',
+						},
+						{
+							image_url: '1922001.jpg',
+							title: 'South Western Railway Magazine 1922',
+						},
+						{
+							image_url: 'Southern Way Vol 1_sm.jpg',
+							title: 'Southern Way Magazine',
+						},
+						{
+							image_url: 'bylines-nov-23.jpg',
+							title: 'Railway Bylines Magazine',
+						},
+					]
+				const imageContainer = document.getElementById('image-container');
+				for (const magazine of magazinesData) {
+					const cardCol = document.createElement('div');
+					cardCol.className = 'col-md-3'; // Set the desired width for medium screens
+
+					const card = document.createElement('div');
+					card.className = 'card shadow-sm custom-card'; // Add the custom-card class
+
+					const img = document.createElement('img');
+					img.className = 'custom-img'; // Add the custom-img class
+					// img.src = "<?php echo URLROOT; ?>/data/" + magazine.image_url;
+					img.src = magazine.image_url;
+
+					const cardBody = document.createElement('div');
+					cardBody.className = 'card-body';
+
+					const cardText = document.createElement('p');
+					cardText.className = 'card-text';
+					cardText.innerHTML = magazine.title;
+
+					cardBody.appendChild(cardText);
+					card.appendChild(img);
+					card.appendChild(cardBody);
+					cardCol.appendChild(card);
+					imageContainer.appendChild(cardCol);
+				}
+			}
+
+			// Call the function to populate the images
+			populateImages();
+		</script>
+		
+		<div class="row"><!--Search Area -->
+			<div class="col-sm-8 pt-3">
+				<h3 class="black">Enter one or more fields to search the magazine catalogue</h3>
+				<h4 class="black">Search Results will show only references to magazines which meet ALL the criteria entered</h4>
+				<form action="https://www.bluebell-railway-museum.co.uk/buildSearchTerm.php" method="post" id="photoSearch" name="photoSearch"  autocomplete="off" Xonsubmit="return checkSearchCriteriaSet(this)"> <!--set action to current dev or live version-->
+					<input type="hidden" name="searchType" id="searchType" value="targeted">
+
+					<div id="journalDiv">
+						<label for="journal">Magazine</label> 
+						<select id="journal"  name="journal">
+							<option value="all">-Select from list-</option>
+							<option value="all">All</option>
+							<option value="Railway Bylines">Railway Bylines</option>
+							<option value="Southern Way">Southern Way</option>
+							<option value="South Western Railway Magazine">South Western Railway Magazine</option>
+						</select>
+					</div>
+
+					<div class="issues" id="issues" name="issues">	
+						<!-- <p>Search for range of loco numbers</p> -->
+						<label for="issueStartRange">Issue(s)</label>
+						<input type="text" name="issueStartRange" id="issueStartRange" placeholder="Single or Start of Range"> 
+						<input type="text" name="issueEndRange" id="issueEndRange" placeholder="End of Range">	
+					</div>
+
+					<div class="volumes" id="volumes" name="volumes">	
+						<!-- <p>Search for range of loco numbers</p> -->
+						<label for="volumeStartRange">Volume(s)</label>
+						<input type="text" name="volumeStartRange" id="volumeStartRange" placeholder="Single or Start of Range"> 
+						<input type="text" name="volumeEndRange" id="volumeEndRange" placeholder="End of Range">	
+					</div>
+
+					<div class="years" id="years" name="years">	
+						<!-- <p>Search for range of loco numbers</p> -->
+						<label for="yearStartRange">Year(s)</label>
+						<input type="text" name="yearStartRange" id="yearStartRange" placeholder="Single or Start of Range"> 
+						<input type="text" name="yearEndRange" id="yearEndRange" placeholder="End of Range">	
+					</div>
+
+					<div class="title" id='titleDiv' name='titleDiv'>
+						<label for="title">Title</label>
+						<input type="text" name="title" id="title" placeholder="All or part of article title">     
+					</div>
+
+					<div class="allFieldsSearch" id='allFieldsSearch' name='allFieldsSearch'>
+						<label for="searchTerm">Text Search of Title and Content</label>
+						<input type="text" name="searchTerm" id="searchTerm" placeholder="An alphanumeric string">   
+					</div>
+
+					<button type="button" onclick="fullFormReset()">Reset</button><input type="submit"  name="targetedSubmit" id="targetedSubmit" value="Submit">
+				</form>
+			</div>
+		</div><!--End of Search Area -->
+
+		<!-- TEMPORARY AREA FOR SEARCH RESULTS -->
+		<strong>SEARCH RESULTS</strong><br><br>
+
+		<div id="json-data"></div>
+
+		<!-- <script type="text/javascript" src="<?php echo URLROOT; ?>/js/magazine_catalogue_search.js"></script> -->
+		<script type="text/javascript" src="magazine_catalogue_search.js"></script>
 		<!-- STANDARD FOOTERS -->
 		<div class="row">
 			<div class="col-sm-12 paddingTop footer1Bgr footer1FontColour">
