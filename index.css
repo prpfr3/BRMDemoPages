@@ -99,7 +99,7 @@ h1 {
 }
 
 .split.center {
-  left: 33%;
+  left: 33.4%;
   background: url('media/P7020742.jpg');
   background-repeat: no-repeat;
   /* To see the whole picture */
@@ -107,7 +107,7 @@ h1 {
 }
 
 .split.right {
-  right: 0;
+  left: 66.8%;
   background: url('media/bluebell_map.gif');
   background-repeat: no-repeat;
   background-size: cover;
