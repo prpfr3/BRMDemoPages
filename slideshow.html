@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slideshow</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+
+    #slideshow-container {
+      position: relative;
+      max-width: 800px;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .slide {
+      display: none;
+      text-align: center;
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 400px;
+    }
+
+    .prev, .next, .home {
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+      background-color: #333;
+      border: none;
+      cursor: pointer;
+    }
+
+    .prev {
+      left: 0;
+    }
+
+    .next {
+      right: 0;
+    }
+
+    .home {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  </style>
+</head>
+<body>
+
+<div id="slideshow-container">
+  <div class="slide">
+    <h2>Slide 1</h2>
+    <img src="image1.jpg" alt="Slide 1">
+  </div>
+  <div class="slide">
+    <h2>Slide 2</h2>
+    <img src="image2.jpg" alt="Slide 2">
+  </div>
+  <!-- Add more slides as needed -->
+
+  <button class="prev" onclick="changeSlide(-1)">&#10094; Prev</button>
+  <button class="next" onclick="changeSlide(1)">Next &#10095;</button>
+  <button class="home" onclick="goHome()">Home</button>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  const timeoutDuration = 5000; // 5 seconds timeout
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.style.display = i === index ? 'block' : 'none';
+    });
+    resetTimeout();
+  }
+
+  function changeSlide(direction) {
+    currentSlide += direction;
+    if (currentSlide < 0) {
+      currentSlide = slides.length - 1;
+    } else if (currentSlide >= slides.length) {
+      currentSlide = 0;
+    }
+    showSlide(currentSlide);
+  }
+
+  function goHome() {
+    window.location.href = 'your-home-url.html';
+  }
+
+  let timeoutId;
+
+  function resetTimeout() {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      goHome();
+    }, timeoutDuration);
+  }
+
+  // Initialize the slideshow
+  showSlide(currentSlide);
+</script>
+
+</body>
+</html>
