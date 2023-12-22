@@ -3,12 +3,12 @@
 :root {
   /* rgba (the a) allows transparency/opaqueness on overlays */
   --left-bg-color: rgba(87, 84, 236, 0.7);
-  --center-bg-color: rgba(226, 236, 84, 0.7);
+  --center-bg-color: rgba(28, 122, 28, 0.7); 
   --right-bg-color: rgba(43, 43, 43, 0.8);
 
   --left-btn-hover-color: rgba(87, 84, 236, 1);
-  --center-btn-hover-color: rgb(114, 83, 48, 1);
-  --right-btn-hover-color: rgba(28, 122, 28, 1);
+  --center-btn-hover-color: rgb(28, 63, 27);
+  --right-btn-hover-color: rgb(31, 31, 16);
 
   --hover-width: 50%;
   --other-width: 25%;
@@ -100,7 +100,7 @@ h1 {
 
 .split.center {
   left: 33.4%;
-  background: url('media/P7020742.jpg');
+  background: url('media/LEGR_Act.png');
   background-repeat: no-repeat;
   /* To see the whole picture */
   background-size: cover;
