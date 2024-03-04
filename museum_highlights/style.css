@@ -39,7 +39,7 @@ body::before {
 }
 
 
-.slide {
+/* .slide {
   display: flex;
   opacity: 0%;
   height: 80vh;
@@ -48,6 +48,19 @@ body::before {
   background-size: cover;
   position: absolute;
   top: 10vh;
+  transition: 0.4s ease;
+  z-index: 1;
+} */
+
+.slide {
+  display: flex;
+  opacity: 0%;
+  height: 90vh; /* Adjusted to cover entire viewport height */
+  width: 80vw;
+  background-position: center center;
+  background-size: cover;
+  position: absolute;
+  top: 0; /* Updated to cover entire viewport height */
   transition: 0.4s ease;
   z-index: 1;
 }
