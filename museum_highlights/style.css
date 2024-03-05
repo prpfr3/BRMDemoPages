@@ -42,7 +42,7 @@ body::before {
 .slide {
   display: none;
   opacity: 0%;
-  height: 80vh; 
+  height: 85vh; 
   width: 80vw;
   background-position: center center;
   background-size: cover;
