@@ -49,7 +49,7 @@ body::before {
   display: none;
   opacity: 0%;
   height: 85vh;
-  width: 80vw; 
+  width: 86vw; 
   background-position: center center;
   background-size: cover;
   position: absolute;
@@ -123,11 +123,11 @@ body::before {
 }
 
 .left-arrow {
-  left: calc(10vw - 69px);
+  left: calc(7vw - 69px);
 }
 
 .right-arrow {
-  right: calc(10vw - 69px);
+  right: calc(7vw - 69px);
 }
 
 .fa-home {
