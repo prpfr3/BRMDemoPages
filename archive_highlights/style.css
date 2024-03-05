@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-@media screen and (min-width: 3840px) and (min-height: 2160px) {
-  /* Adjust styles for Promultis Electra 4K UHD 32-inch 3840 x2160 resolution viewport */
+/* @media screen and (min-width: 3840px) and (min-height: 2160px) {
+  Adjust styles for Promultis Electra 4K UHD 32-inch 3840 x2160 resolution viewport
   .slide {
-    height: 90vh; /* Reduce height for larger screens */
+    height: 90vh; Reduce height for larger screens
   }
-}
+} */
 
 * {
   box-sizing: border-box;
