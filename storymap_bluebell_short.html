@@ -8,6 +8,7 @@
     <link rel="stylesheet" type='text/css' href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Montserrat'>  
     <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Raleway'>
+    <!-- Standard BRM Webpage styling used for the header bar -->
     <link rel="stylesheet" type="text/css" href="https://www.bluebell-railway-museum.co.uk/css/additionalA.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.knightlab.com/libs/storymapjs/latest/css/storymap.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
@@ -20,6 +21,7 @@
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
     <style>
+      /* The styling for the Font Awesome Home Page Icon */
     .fa-home {
         color: white;
       }
@@ -32,10 +34,14 @@
         background-color: transparent;
         color: #fff;
         padding: 18px;
-        /* transform: translateY(-50%); */
         font-size: 25px;
         border: 2px solid #fff;
       }
+
+    /* Override the default Storymap font to be 12px
+    p .vco-storymap.vco-layout-landscape {
+      font-size: 12px;
+    } */
     </style>
   </head>
 
@@ -49,7 +55,7 @@
         <p></p>
     </div>
     <!-- <div id="mapdiv" style="width: 100%; height: 750px;"></div> -->
-    <div id="mapdiv" style="justify-content: center; width: 98%; height: 90vh;"></div>    
+    <div id="mapdiv" style="justify-content: center; width: 98%; height: 85vh;"></div>
     <script>
         // Fetch the JSON file content using an asynchronous request
         fetch('storymap_bluebell_short.json')
@@ -68,7 +74,7 @@
                 const inactivityTimeout = 1 * 180 * 1000; // 180 seconds
 
                 // Set the URL of the new home page
-                const newHomePageURL = 'http://127.0.0.1:5501/index.html';
+                const newHomePageURL = 'https://prpfr3.github.io/BRMDemoPages/';
 
                 let inactivityTimer;
 
