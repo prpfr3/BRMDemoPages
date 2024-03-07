@@ -6,6 +6,9 @@ const rightBtn = document.getElementById('right');
 let activeSlide = 0;
 let activeImageSrc = '';
 
+// Initialize the inactivity timer
+initializeInactivityTimer();
+
 rightBtn.addEventListener('click', () => {
   activeSlide++;
 

@@ -1,24 +1,19 @@
-      /* The styling for the Font Awesome Home Page Icon */
-      .fa-home {
-        color: white;
-        font-style: normal !important;
-      }
-      
-      .home {
-        position: absolute;
-        cursor: pointer;
-        top: 150px;
-        left: 1px;
-        background-color: rgba(0, 0, 0, 0.7);
-        color: orange;
-        padding: 18px;
-        font-size: 25px;
-        border: 2px solid orange;
-        font-style: normal;
-        z-index : 2;
-      }
+/* The styling for the Font Awesome Home Page Icon */
+.fa-home {
+  color: white;
+  font-style: normal !important;
+}
 
-    /* Override the default Storymap font to be 12px
-    p .vco-storymap.vco-layout-landscape {
-      font-size: 12px;
-    } */
+.home {
+  position: absolute;
+  cursor: pointer;
+  top: 150px;
+  left: 1px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: orange;
+  padding: 18px;
+  font-size: 25px;
+  border: 2px solid orange;
+  font-style: normal;
+  z-index : 2;
+}

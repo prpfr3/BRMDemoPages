@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -30,55 +30,13 @@
         <p></p>
     </div> -->
     <!-- <div id="mapdiv" style="width: 100%; height: 750px;"></div> -->
-    <div id="mapdiv" style="justify-content: center; width: 95%; height: 98vh;">
+    <div id="mapdiv" style="justify-content: center; width: 98%; height: 98vh;">
       <button class="home" id="home">
         <a href="index.html"><i class="fas fa-home"></i></a>
       </button>
     </div>
-    <script>
-        // Fetch the JSON file content using an asynchronous request
-        fetch('storymap_bluebell_short.json')
-            .then(response => response.json())
-            .then(storymap_data => {
-                // certain settings must be passed within a separate options object
-                var storymap_options = {};
-                
-                var storymap = new KLStoryMap.StoryMap('mapdiv', storymap_data, storymap_options);
-                window.onresize = function(event) {
-                    storymap.updateDisplay(); // this isn't automatic
-                }
+    <script src="storymap_bluebell_short.js"></script>
 
-                // CODE SUGGESTED BY CHATGPT TO FORCE A RETURN TO A HOME PAGE
-                // Set the time limit for inactivity in milliseconds
-                const inactivityTimeout = 1 * 180 * 1000; // 180 seconds
-
-                // Set the URL of the new home page
-                const newHomePageURL = 'https://prpfr3.github.io/BRMDemoPages/';
-
-                let inactivityTimer;
-
-                // Function to reset the inactivity timer
-                function resetInactivityTimer() {
-                clearTimeout(inactivityTimer);
-                // The JavaScript setTimeout() method calls a function after a number of milliseconds.
-                inactivityTimer = setTimeout(redirectHomePage, inactivityTimeout);
-                }
-
-                // Function to redirect to the home page
-                function redirectHomePage() {
-                window.location.href = newHomePageURL;
-                }
-
-                // Attach event listeners to reset the timer on user interaction
-                document.addEventListener('mousemove', resetInactivityTimer);
-                document.addEventListener('keydown', resetInactivityTimer);
-
-                // Initialize the inactivity timer
-                resetInactivityTimer();
-
-            })
-            .catch(error => console.error('Error loading JSON file:', error));
-    </script>
 
 </body>
 </html>

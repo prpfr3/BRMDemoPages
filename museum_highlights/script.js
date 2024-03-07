@@ -31,6 +31,9 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+// Initialize the inactivity timer
+initializeInactivityTimer();
+
 const body = document.body;
 const slides = document.querySelectorAll('.slide');
 const leftBtn = document.getElementById('left');
