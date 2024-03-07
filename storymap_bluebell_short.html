@@ -8,54 +8,33 @@
     <link rel="stylesheet" type='text/css' href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Montserrat'>  
     <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Raleway'>
-    <!-- Standard BRM Webpage styling used for the header bar -->
-    <link rel="stylesheet" type="text/css" href="https://www.bluebell-railway-museum.co.uk/css/additionalA.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.knightlab.com/libs/storymapjs/latest/css/storymap.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
     integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
     crossorigin="anonymous"/>
+    <link rel="stylesheet" type="text/css" href="storymap_bluebell_short.css">
     
     <script type="text/javascript" src="https://cdn.knightlab.com/libs/storymapjs/latest/js/storymap-min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
-    <style>
-      /* The styling for the Font Awesome Home Page Icon */
-    .fa-home {
-        color: white;
-      }
-      
-      .home {
-        position: absolute;
-        cursor: pointer;
-        top: 3px;
-        left: 3px;
-        background-color: transparent;
-        color: #fff;
-        padding: 18px;
-        font-size: 25px;
-        border: 2px solid #fff;
-      }
-
-    /* Override the default Storymap font to be 12px
-    p .vco-storymap.vco-layout-landscape {
-      font-size: 12px;
-    } */
-    </style>
   </head>
 
 <body>
 
-    <div class="col-sm heroFontColour botpad3 toppad3 text-center heroBgr baseFontSize">
+    <!-- <div class="col-sm heroFontColour botpad3 toppad3 text-center heroBgr baseFontSize">
         <button class="home" id="home">
             <a href="index.html"><i class="fas fa-home"></i></a>
           </button>
         <h1 class="text-center"><b>Travel the Route</b></h1>
         <p></p>
-    </div>
+    </div> -->
     <!-- <div id="mapdiv" style="width: 100%; height: 750px;"></div> -->
-    <div id="mapdiv" style="justify-content: center; width: 98%; height: 85vh;"></div>
+    <div id="mapdiv" style="justify-content: center; width: 100%; height: 100vh;">
+      <button class="home" id="home">
+        <a href="index.html"><i class="fas fa-home"></i></a>
+      </button>
+    </div>
     <script>
         // Fetch the JSON file content using an asynchronous request
         fetch('storymap_bluebell_short.json')
