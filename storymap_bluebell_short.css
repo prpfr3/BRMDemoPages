@@ -1,4 +1,5 @@
-/* The styling for the Font Awesome Home Page Icon */
+/* The styling for the Font Awesome Home Page Icon
+Positioned slightly down from the top to avoid OSM Map Links */
 .fa-home {
   color: white;
   font-style: normal !important;
