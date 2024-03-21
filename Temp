@@ -1,0 +1,256 @@
+	/*
+	website version 7.12
+	program version 0001
+	*/
+	
+	
+	/* Colour Scheme  */
+	.footer1Bgr {background-color:#4d5061;}
+	.footer1FontColour {color:#FFFFFF;}
+	.heroBgr {background-color:#23aea6; background-color:#718dc9; background-color:#6a0000;}
+	.heroFontColour {color:#fbf0bf;}
+	.soBgr {background-color:#FFFFFF;}
+	.soFontColour {color:#2E55A2; color:#2E55A2;  color:#0c2e6f;}
+	.logoBgr {background-color:#FFFFFF;}
+	.menuBarBgr {background-color:#0C2E6F; background-color:#4d5061; background-color:#6a0000;}
+	.menuBarFontColour {color:#FFFFFF;}
+	.menuBarrollOverBgr {background-color:#FFFFFF;}
+	.menuBarrollOverFontColour {color:#0C2E6F;}
+	
+	.menuBarBgrSmall {background-color:#FFFFFF;}   /*Background colour for menu on small screens - probably should be white*/
+	.menuBarFontColourSmall {color:#FF0000; color:#f00;}
+	.menuBarrollOverBgrSmall {background-color:#0000ff;}
+	.menuBarrollOverFontColourSmall {color:#00ff00;}
+	
+	.rowA1AltFontColour {color:#FFFFFF;}
+	.rowA1Bgr {background-color:#0C2E6F; background-color:#4d5061; background-color:#ffffff;}
+	.rowA1FontColour {color:#FFFFFF; color:#333333; color:#212529;}
+	.rowA1rollOverBgr {background-color:#fcfbb8;}
+	.rowA1rollOverFontColour  {background-color:#5a0000; }
+	.rowA3Bgr {background-color:#F9F9E2; background-color:#2e55a2;}
+	.rowA3FontColour {color:#212529;}
+	.rowA3headingFontColor {color:#666666;}
+	.rowB1AltFontColour {color:#FFFFFF;}
+	.rowB1Bgr {background-color:#2e55a2; background-color:#355252; background-color:#ffffff; }
+	.rowB1FontColour {color:#333333;}
+	.rowB1rollOverBgr {background-color:#fcfbb8;}
+	.rowB1rollOverFontColour {color:#5a0000;}
+	.rowC1AltFontColour {color:#333333;}
+	.rowC1Bgr {background-color:#F8F9E2; background-color:#eef0f4;}
+	.rowC1FontColour {color:#333333;}
+	.rowC1rollOverBgr {background-color:#fcfbb8;}
+	.rowC1rollOverFontColour {color:#5a0000;}
+	.lightBgr				{background-color:#E8E5E5;}
+	.brightBlueFont			{color:#007BFF;}
+	.brightRedFont			{color:#FF021A;}
+	 /*for youngVisitors page*/	
+	.yPPaleBlueBgr 			{background-color: #519B9C;}
+	.yPDarkerBlueBgr	 	{background-color: #1C6463;}	
+	.yPPaleGreenBgr			{background-color: #6ccd6c;}
+	.yPDarkerGreenBgr		{background-color: #258625;}
+
+	.yPPaleRedBgr			{background-color: #ff8484;}
+	.yPDarkerRedBgr			{background-color: #a72c2c;}
+
+	.yPPaleBrownBgr			{background-color: #ffbc85;}
+	.yPDarkerBrownBgr		{background-color: #7e4414;}
+	
+	.yPPaleYellowBgr		{background-color: #fffe80;}
+	.yPDarkerYellowBgr		{background-color: #c36503;}
+	
+	.white 					{color:#FFFFFF;}
+	.black 					{color:#000000;}
+	.whiteBgr				{background-color: #FFFFFF;}
+	.blackBgr 				{background-color: #000000;}
+	.contrastBgr 			{background-color: #892040;}
+	.redBgr 					{background-color: #ff0000;}
+	.greenBgr 				{background-color: #00ff00; background-color: #C3F1C3;}
+/* Roll Overs  */
+	
+	a.class1 {color:#fff;}
+	a.class1:link  {text-decoration: none; color: #fff;  margin-right:20px; 							} 
+	a.class1:visited {text-decoration: none; color: #fff; margin-right:20px; 						}
+	a.class1:hover {text-decoration: none; color:#666666; background-color:#fff; margin-right:20px;	}
+
+	a.class2 {color:#fcfbb8; color:#212529}
+	a.class2:link  {text-decoration: underline; color: #212529;  margin-right:20px; 							} 
+	a.class2:visited {text-decoration: none; color: #fcfbb8; color:#212529; margin-right:20px; 						}
+	a.class2:hover {text-decoration: none; color:#fff; background-color:#000; margin-right:20px;	}
+	a.class2:active {text-decoration: underline; color: black; margin-right:20px;	}
+	
+	a.class3 {color:#666;}
+	a.class3:link  {text-decoration: underline; color: #666;  margin-right:20px; 							} 
+	a.class3:visited {text-decoration: none; color: #666; margin-right:20px; 						}
+	a.class3:hover {text-decoration: none; color:#666; background-color:#fcfbb8; margin-right:20px;	}
+	a.class3:active {text-decoration: underline; color: #666; margin-right:20px;	}
+
+	a.class4 {color:#212529;}
+	a.class4:link  {text-decoration: none; color: #212529;  margin-right:20px; 							} 
+	a.class4:visited {text-decoration: none; color: #666; margin-right:20px; 						}
+	a.class4:hover {text-decoration: underline; color:#00f; Xbackground-color:#fcfbb8; margin-right:20px;	}
+	a.class4:active {text-decoration: underline; color: #00f; margin-right:20px;	}
+	
+	
+	
+	a.classa2 {color:#212529; text-decoration: underline;}
+	a.classa2:link  {text-decoration: underline; color: #212529;} 
+	a.classa2:visited {text-decoration: none; color: #212529;}
+	a.classa2:hover {text-decoration: none; color:#ffffff; background-color:#000000	}
+	a.classa2:active {text-decoration: underline; color: black; }
+	
+	.button1 {
+	background-color: #6A0000; /* Brighton Red */
+	color: #FBF0BF; 
+	border: 2px solid #FBF0BF;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	}
+	
+	.button1:hover {
+	background-color: #FBF0BF;
+	color: #6A0000; 
+	transition-duration: 0.4s;
+	cursor: pointer;
+	}
+	.button2 {
+	background-color: #EEF0F4; /* Brighton Red */
+	color: #333333; 
+	border: 2px solid #EEF0F4;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	}
+	
+	.button2:hover {
+	background-color: #333333;
+	color: #EEF0F4; 
+	transition-duration: 0.4s;
+	cursor: pointer;
+	}
+/*Bootstrap 4 breakpoints*/
+@media only screen 
+and (min-device-width : 280px) 
+and (max-device-width : 575px){  
+  h1 {font-size:1.5rem;  color:#fff;} /*1rem = 16px*/
+  .imgDateA   {display:none;}
+  .imgDate  {display:block;}
+}
+@media only screen 
+and (min-device-width : 576px) 
+and (max-device-width : 767px){  
+  h1 {font-size:1.5rem;  color:#fff;} /*1rem = 16px*/
+  .imgDateA   {display:none;}
+  .imgDate  {display:block;}
+}
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 991px){  
+  h1 {font-size:2rem;  color:#fff;} /*1rem = 16px*/
+  .imgDate   {display:none;}
+  .imgDateA  {display:block;}
+}
+@media only screen 
+and (min-device-width : 992px) 
+and (max-device-width : 1199px){  
+  h1 {font-size:2.25rem;  color:#fff;} /*1rem = 16px*/
+  .imgDate   {display:none;}
+  .imgDateA  {display:block;}
+}
+@media only screen 
+and (min-device-width : 1200px){  
+  h1 {font-size:2.50rem;  color:#fff;} /*1rem = 16px*/
+  .imgDate    {display:none;}
+  .imgDateA   {display:block;}
+}
+	
+/*CSS for navigation*/
+/*To change colour of the toggler icon
+	1. Add the .bg-iconnav class which allows the background to be changed - it is possible to specify gradient if needed.
+	2. Change the .navbar-toggler-icon class. the "stroke" parameters may be changed to set the colour of the hamburger lines */
+	/*Test*/
+		.bg-iconnav {
+		background: #f0323d; background: #fff;
+		/* Old browsers 
+		background: -moz-linear-gradient(top, #f0323d 0%, #e6366c 100%);*/
+		background: -moz-linear-gradient(top, #fff 0%, #fff 100%);
+		/* FF3.6-15 
+		background: -webkit-linear-gradient(top, #f0323d 0%, #e6366c 100%); */
+		background: -webkit-linear-gradient(top, #fff 0%, #fff 100%);
+		/* Chrome10-25,Safari5.1-6
+		background: linear-gradient(to bottom, #f0323d 0%, #e6366c 100%); */
+		background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+		/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ 
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0323d', endColorstr='#e6366c', GradientType=0);*/
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#fff', GradientType=0);
+		/* IE6-9 */
+		border-radius: 0;
+		padding: 10px;
+		}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(130,49,46, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+	/*!Test*/
+	.navFont	{font-family: "Montserrat", serif; font-size: 16px;}
+	/* change the link color */
+	.navbar-custom .navbar-nav .nav-link {
+		color: #000000;
+	}
+	/* change the color of active or hovered links */
+	.navbar-custom .nav-item.active .nav-link,
+	.navbar-custom .nav-item:hover .nav-link {
+		color: #00ffff;
+	}
+	.navbar-dark .navbar-nav .nav-link{color:rgba(255,255,255,1)}
+	.navbar-dark .navbar-nav .nav-link:focus,.navbar-dark .navbar-nav .nav-link:hover{color:rgba(12, 46, 111, 1);background-color:#fff;}
+	.navbar-dark-small{color:rgba(255,000,000,1)}
+	/*Fonts*/
+	
+	
+  .baseFontSize		{font-size:120%;}
+  .baseFont			{font-family: "Raleway", san-serif; font-size: 16px;}
+  .seoFont			{font-family: "Raleway", san-serif; font-size:1.00rem;}
+  .notesFont		{font-family: "Raleway", san-serif; font-size:1.00rem;}
+  .rowA1FontSize	{font-size:120%;}
+  .headerFont		{font-family: "Montserrat", san-serif;}
+  h1				{font-family: "Montserrat", san-serif;}
+  .midFontSize		{font-size:130%;}
+  .smallFont		{font-size:50%;}
+  /*Padding, centring*/
+  
+  
+  .paddingTop		{padding-top: 20px;}
+  .toppad2      		{padding-top: 5px;}
+  .botpad2      		{padding-bottom: 5px;}
+  .toppad3      		{padding-top: 10px;}
+  .botpad3      		{padding-bottom: 10px;}
+  .toppad4      		{padding-top: 60px;}
+  .botpad4      		{padding-bottom: 60px;}
+  .marginRight5		{margin-right: 5px;}
+  .marginLeft5		{margin-left: 5px;}  
+  .paddingRight5	{padding-right: 5px;}
+  .paddingLeft5		{padding-left: 5px;}
+  
+  /*Make boxes in divs on Young Visitors page the same height*/
+  .eqiHeight {
+  border: 0px solid #CCCCCC;
+  padding: 0;
+  min-height: 95%;
+  max-height: 95%;
+}
+
+ /*Adjustment to list indent - for Young Visitors page */
+  ul{
+  margin-left:1px;
+  padding-left: 20px;
+}
+
+/*set image height to make sizes equal*/
+.imgHeight	{height: 330px; max-height:330px}
+
+/*set height of element 75% of screen size - use to avoid footer appearing in middle of page*/
+.minH {min-height:75vh;}
+
+/*values for Brighton Red Dev*/
+
+.brightonRedFont	{color: #431918;}
