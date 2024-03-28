@@ -94,7 +94,7 @@ body::before {
   margin-bottom: 3px;
   font-size: 1.2rem;
   position: relative;
-  text-align: center; 
+  text-align: left; 
 }
 
 .slide-content p {
