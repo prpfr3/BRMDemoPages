@@ -1,5 +1,5 @@
 // Set the time limit for inactivity in milliseconds
-window.inactivityTimeout = 1 * 180 * 1000; // 180 seconds
+window.inactivityTimeout = 15 * 60 * 1000; // 15 minutes in milliseconds
 
 // Set the URL of the new home page
 window.newHomePageURL = 'https://prpfr3.github.io/BRMDemoPages/';
