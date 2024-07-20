@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  background-position: center center;
+  background-size: cover;
+  transition: 0.4s;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* fill the viewport  */
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: -1; /* -1 puts this behind everything else */
+}
+
+.slider-container {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  height: 90vh;
+  width: 90vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  opacity: 0%;
+  height: 90vh; 
+  width: 80vw;
+  background-position: center center;
+  background-size: cover;
+  position: absolute;
+  top: 5vh; 
+  transition: 0.4s ease;
+  z-index: 1;
+}
+
+.slide.active {
+  display: flex;
+  opacity: 1;
+  z-index : 2;
+}
+
+.slide-image {
+  flex: 1;
+  width: 50%; /* Adjust the width as needed */
+  height: 100%; /* Maintain the height */
+  overflow: hidden;
+  background-color: #000;
+}
+
+.slide-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.slide-content {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+}
+
+.slide-content h1 {
+  margin-bottom: 5px;
+  /* font-size: 1.4rem; */
+  position: relative;
+  text-align: center; 
+}
+
+.slide-content h2 {
+  margin-bottom: 3px;
+  font-size: 1.2rem;
+  position: relative;
+  text-align: left; 
+}
+
+.slide-content p {
+  max-width: 100%;
+  word-wrap: break-word; 
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+  position: relative;
+  text-align: left; 
+}
+
+.list-3columns {
+  column-count: 3; /* Split the list into three columns */
+  column-gap: 30px; /* Adjust the gap between columns */
+}
+
+.list-3columns li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9rem;  /* Reduce the font size by 60% */
+  position: relative; /* Add a relative position for absolute positioning */
+}
+
+.list-3columns li::before {
+  content: "\2022"; /* Add bullet character */
+  position: absolute; /* Position the bullet absolutely */
+  left: -20px; /* Adjust the position of the bullet */
+}
+
+.list-keydates {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+.list-keydates li {
+  margin: 0; /* Remove any default margin */
+  padding: 0;
+  list-style: none;
+  font-size: 0.9rem;  /* Reduce the font size by 60% */
+  position: relative; /* Add a relative position for absolute positioning */
+  padding-bottom: 4px;
+}
+
+.list-keydates li::before {
+  content: "\2022"; /* Add bullet character */
+  position: absolute; /* Position the bullet absolutely */
+  left: -5px; /* Adjust the position of the bullet */
+}
+
+.citation {
+  padding: 25px;
+  font-size: 0.9rem; 
+  font-style: italic; /* Italicize the font */
+}
+
+.arrow {
+  position: fixed;
+  cursor: pointer;
+  background-color: transparent;
+  color: #fff;
+  padding: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  border: 2px solid orange;
+}
+
+.arrow:focus {
+  outline: 0;
+}
+
+.left-arrow {
+  left: calc(10vw - 69px);
+}
+
+.right-arrow {
+  right: calc(10vw - 69px);
+}
+
+.fa-home {
+  color: white;
+}
+
+.home {
+  position: absolute;
+  cursor: pointer;
+  top: 5px;
+  left: 5px;
+  background-color: transparent;
+  color: #fff;
+  padding: 20px;
+  /* transform: translateY(-50%); */
+  font-size: 30px;
+  border: 2px solid orange;
+}
