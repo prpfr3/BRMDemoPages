@@ -65,7 +65,7 @@ function nextSlide() {
 // Function to reset the auto-slide timer
 function resetAutoSlideTimer() {
   clearTimeout(autoSlideTimer);
-  autoSlideTimer = setInterval(nextSlide, 10000); // Keep advancing every 10 seconds
+  autoSlideTimer = setInterval(nextSlide, 20000); // Keep advancing every 20 seconds
 }
 
 // Start the auto-slide timer when the page loads
