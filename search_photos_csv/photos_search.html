@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+		<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>  
+		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+	
+		 <link rel="stylesheet" type="text/css" href="https://www.bluebell-railway-museum.co.uk/css/additionalA.css">
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	
+		 <meta name="description" content=" A large archive of railway photographs is available to search and browse online. These include locomotives, stations, signals, signal boxes and infrastructure. All areas of the UK and Ireland are included. Copies, in a variety of sizes and jpg format, may be purchased. ">  
+		 <meta name="keywords" content="">
+		<!-- <title>Heritage Steam | Railway  | Museum | Family Days Out | </title> -->
+	
+		<style>
+			.bar3Bg	{background-color: #eef0f4;}
+			.redBackground {background-color: #f00;}	
+			.btn-light {color:#17a2b8;}
+		</style>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/handsontable@latest/dist/handsontable.full.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@latest/dist/handsontable.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <title>Photo Search</title>
+</head>
+<body>
+
+	<div class="container logoBgr baseFont">
+		<div class="row d-sm-none"><!--Menu on smaller screens-->
+			<div class="row menuBarBgrSmall">
+				<div class="col-sm white botpad2 toppad2 baseFontSize">
+					<nav class="navbar navbar-expand-sm navbar-dark-small menuBarBgrSmall py-0">
+						<button class="navbar-toggler bg-iconnav" type="button" data-toggle="collapse" data-target="#collapsibleNavbarSmall">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						<div class="collapse navbar-collapse" id="collapsibleNavbarSmall">
+							<ul class="navbar-nav navFont">
+								<li class="nav-item pr-auto">
+										<a class="nav-link" href="https://www.bluebell-railway-museum.co.uk/index.php">Home <span class="sr-only">(current)</span></a>
+								</li>
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkSmall" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Museum</a>
+									<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkSmall">
+										<a class="dropdown-item" href="https://www.bluebell-railway-museum.co.uk/withyhamSignalBox.php">Withyham&nbsp;signal&nbsp;box</a>
+										<a class="dropdown-item" href="https://www.bluebell-railway-museum.co.uk/youngVisitors.php">Younger&nbsp;visitors</a>
+										<a class="dropdown-item" href="https://www.bluebell-railway-museum.co.uk/bookingOffice.php">Booking&nbsp;office</a>				
+										<a class="dropdown-item" href="https://www.bluebell-railway-museum.co.uk/theMuseum.php">Museum story</a>				
+										<a class="dropdown-item" href="https://www.bluebell-railway-museum.co.uk/research.php">Research Articles</a>
+										<a class="dropdown-item" href="https://www.bluebell-railway-museum.co.uk/yourHistory.php">Your history</a>
+										<a class="dropdown-item" href="https://www.360visits.co.uk/clienttours/bluebell-railway-museum/index.htm" target="_blank">Virtual Tour</a> 
+									</div>
+								</li>	  
+								<li class="nav-item">
+									<a class="nav-link" href="https://www.bluebell-railway-museum.co.uk/collection.php">Collections</a>
+								</li>
+								<li class="nav-item pr-auto">
+									<a class="nav-link" href="https://www.bluebell-railway-museum.co.uk/whatsNew.php">News<span class="sr-only">(current)</span></a>
+								</li>
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkASmall" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Archive</a>
+									<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkASmall">
+										<a class="dropdown-item" href="https://www.bluebell-railway-museum.co.uk/photographArchive.php">Photographs</a>
+									</div>
+								</li>
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkBSmall" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Find&nbsp;us</a>
+									<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkBSmall">
+										<a class="dropdown-item" href="https://www.bluebell-railway-museum.co.uk/findUs.php">Find&nbsp;us</a>
+										<a class="dropdown-item" href="https://www.bluebell-railway-museum.co.uk/contact.php">Contact&nbsp;us</a>
+										<a class="dropdown-item" href="https://www.bluebell-railway-museum.co.uk/volunteer.php">Volunteer</a>
+									</div>
+								</li>
+								<li class="nav-item pr-auto">
+										<a class="nav-link" href="https://www.bluebell-railway-museum.co.uk/planVisit.php">Plan a visit</a>
+								</li>
+							</ul>						
+						</div>
+					</nav>
+				</div>
+			</div>	
+		</div><!--Menu on smaller screens-->
+
+		<div class="row"><!--Logo-->
+			<div class="col-sm-5 text-center">
+				<picture>
+					<source media="(max-width: 599px)" srcset="https://www.bluebell-railway-museum.co.uk/services_files/logoOriginal2.gif" class="img-fluid" >
+					<source media="(max-width: 800px)" srcset="https://www.bluebell-railway-museum.co.uk/services_files/logoOriginal2.gif" class="img-fluid" >
+					<source media="(min-width: 801px)" srcset="https://www.bluebell-railway-museum.co.uk/services_files/logoOriginal.gif" class="img-fluid" >
+					<img src="https://www.bluebell-railway-museum.co.uk/services_files/logoOriginal.gif" alt="">
+				</picture>
+			</div>
+		</div>
+		
+		<div class="row menuBarBgr d-none d-sm-block"><!--Menu on larger screens-->
+			<div class="col-sm white botpad2 toppad2 baseFontSize">
+				<nav class="navbar navbar-expand-sm navbar-dark menuBarBgr py-0">
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+					<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="collapsibleNavbar">
+						<ul class="navbar-nav navFont">
+							<li class="nav-item pr-auto">
+								<a class="nav-link" href="https://www.bluebell-railway-museum.co.uk/index.php">Home <span class="sr-only">(current)</span></a>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Museum</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkSmall">
+									<a class="dropdown-item" href="https://www.bluebell-railway-museum.co.uk/withyhamSignalBox.php">Withyham&nbsp;signal&nbsp;box</a>
+									<a class="dropdown-item" href="https://www.bluebell-railway-museum.co.uk/youngVisitors.php">Younger&nbsp;visitors</a>
+									<a class="dropdown-item" href="https://www.bluebell-railway-museum.co.uk/bookingOffice.php">Booking&nbsp;office</a>				
+									<a class="dropdown-item" href="https://www.bluebell-railway-museum.co.uk/theMuseum.php">Museum story</a>				
+									<a class="dropdown-item" href="https://www.bluebell-railway-museum.co.uk/research.php">Research Articles</a>
+									<a class="dropdown-item" href="https://www.bluebell-railway-museum.co.uk/yourHistory.php">Your history</a>
+									<a class="dropdown-item" href="https://www.360visits.co.uk/clienttours/bluebell-railway-museum/index.htm" target="_blank">Virtual Tour</a> 
+								</div>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="https://www.bluebell-railway-museum.co.uk/collection.php">Collections</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="https://www.bluebell-railway-museum.co.uk/whatsNew.php">News</a>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkA" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Archive</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkA">
+									<a class="dropdown-item" href="https://www.bluebell-railway-museum.co.uk/photographArchive.php">Photographs</a>
+								</div>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkB" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Find&nbsp;us</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkB">
+									<a class="dropdown-item" href="https://www.bluebell-railway-museum.co.uk/findUs.php">Find&nbsp;us</a>
+									<a class="dropdown-item" href="https://www.bluebell-railway-museum.co.uk/contact.php">Contact&nbsp;us</a>
+									<a class="dropdown-item" href="https://www.bluebell-railway-museum.co.uk/volunteer.php">Volunteer</a>
+								</div>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="https://www.bluebell-railway-museum.co.uk/planVisit.php">Plan a visit</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div><!--Menu on larger screens-->
+
+	<div class="row">
+		<div class="col-sm heroFontColour botpad3 toppad3 text-center heroBgr baseFontSize">
+			<h1>Archive of Photographs</h1>
+			<p>Browse, search and buy digital copies from an archive of 20,000+ photos of locomotives, rolling Stock and infrastructure taken across the UK and Ireland.<p>
+		</div>
+	</div>
+
+	<div class="album py-4 bg-light">
+		<div class="container">
+		<h3 class="black">The Collections</h3>
+			<div class="row" id="image-container">
+				<!-- JavaScript will populate the images here -->
+			</div>
+		</div>
+	</div>
+
+	<style>
+		.custom-card {
+				display: flex; 
+				align-items: center;
+				justify-content: center;
+				border: 1px solid #ccc;
+				height: 100%; /* Set the desired height (e.g., 100% for responsiveness) */
+		}
+
+		.custom-img {
+				max-width: 100%; /* Set to 100% or specific pixel value */
+				max-height: 100%; /* Set to 100% or specific pixel value */
+				object-fit: contain; /* Adjust to your preference (cover, contain, etc.) */
+		}
+	</style>
+
+	<div id="modalContainer"></div>
+	<script type="text/javascript" src="photos_modals.js"></script>
+
+	<script>
+		// Function to populate the images and card text
+		function populateImages() {
+			const imageContainer = document.getElementById('image-container');
+			for (const collection of collectionsData) {
+				const cardCol = document.createElement('div');
+				cardCol.className = 'col-md-3'; // Set the desired width for medium screens
+
+				const card = document.createElement('div');
+				card.className = 'card shadow-sm custom-card'; // Add the custom-card class
+
+				const img = document.createElement('img');
+				img.className = 'custom-img'; // Add the custom-img class
+				img.src = collection.image_url;
+
+				const cardBody = document.createElement('div');
+				cardBody.className = 'card-body';
+
+				const cardText = document.createElement('p');
+				cardText.className = 'card-text';
+				cardText.innerHTML = collection.summary;
+
+				cardBody.appendChild(cardText);
+				card.appendChild(img);
+				card.appendChild(cardBody);
+				cardCol.appendChild(card);
+				imageContainer.appendChild(cardCol);
+			}
+		}
+
+		// Call the function to populate the images
+		populateImages();
+	</script>
+
+    <div id="example"></div>
+
+    <script>
+        // Specify the file with spaces, URL-encoded
+        var csvUrl = './142701%20-%20142735%20website.csv';  // Relative path with spaces encoded
+
+        // Fetch the CSV file and parse it using PapaParse
+        fetch(csvUrl)
+            .then(response => response.text())
+            .then(csv => {
+                // Use PapaParse to parse the CSV
+                Papa.parse(csv, {
+                    complete: function(results) {
+                        var rows = results.data;
+
+                        // Extract the first row as column headers
+                        var headers = rows[0];
+
+                        // Extract the rest as data
+                        var data = rows.slice(1);
+
+                        // Initialize Handsontable with the parsed data and headers
+                        initHandsontable(data, headers);
+                    },
+                    error: function(err) {
+                        console.error("Error parsing CSV:", err);
+                    }
+                });
+            })
+            .catch(error => console.error("Error fetching CSV:", error));
+
+        function initHandsontable(data, headers) {
+            var container = document.getElementById('example');
+            var hot = new Handsontable(container, {
+                data: data,
+                colHeaders: headers,
+                rowHeaders: true,
+                filters: true,
+                dropdownMenu: true
+            });
+        }
+    </script>
+
+</body>
+</html>
