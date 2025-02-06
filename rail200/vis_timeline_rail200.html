@@ -12,7 +12,7 @@
     }
 
     #visualization {
-      height: 500px; /* Set your desired height */
+      height: 800px; /* Set your desired height */
       overflow: auto; /* Allow scrolling if items exceed the height */
       position: relative; /* Maintain relative positioning */
     }
@@ -131,6 +131,15 @@
 
 
   var timeline = new vis.Timeline(container, items, options);
+
+  function ensureTimelineHeight() {
+  requestAnimationFrame(function () {
+    timeline.redraw();
+  });
+}
+
+  window.addEventListener('load', ensureTimelineHeight);
+  window.addEventListener('resize', ensureTimelineHeight);
 </script>
 </body>
 </html>
